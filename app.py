@@ -62,3 +62,7 @@ choice_for_scatter = st.selectbox('Price dependency on',list_for_scatter)
 fig2 = px.scatter(df, x="model", y=choice_for_scatter, color ="age_category",hover_data=['model_year'])
 fig2.update_layout(title="<b> Model vs {}</b>".format(choice_for_scatter))
 st.plotly_chart(fig2)
+
+df['is_4wd'] = df['is_4wd'].fillna(0).astype(bool)
+
+df['paint_color'] = df['paint_color'].fillna('unknown')
